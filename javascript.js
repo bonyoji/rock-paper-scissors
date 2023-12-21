@@ -18,15 +18,20 @@ function getComputerChoice() {
 //     return userChoice;
 // }
 
-let btn = document.querySelectorAll('.button');
+const buttons = document.querySelectorAll('button');
 
-
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log('Clicked');
+        console.log(button.innerHTML.toLowerCase());
+    });
+});
 
 function playRound(playerSelection, computerSelection) {
     // Game is a tie, play again
     if (playerSelection === computerSelection){
         console.log('Tie! Re-match!');
-        return playRound(getPlayerChoice(), getComputerChoice());
+        return playRound('rock', getComputerChoice());
     }
 
     // Compare results
@@ -74,6 +79,6 @@ const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
-playRound();
+// playRound();
 
 //game();
