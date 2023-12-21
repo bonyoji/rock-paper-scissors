@@ -39,46 +39,50 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === `paper`) {
             computerScore++;
             matchResult.textContent = 'You Lose! Paper beats Rock!';
+            scorePlayer.textContent = 'Player Score: ' + playerScore;
+            scoreCPU.textContent = 'CPU Score: ' + computerScore;
         } else {
             playerScore++;
             matchResult.textContent = 'You Win! Rock beats Scissors!';
+            scorePlayer.textContent = 'Player Score: ' + playerScore;
+            scoreCPU.textContent = 'CPU Score: ' + computerScore;
         }
     } else if (playerSelection === `paper`) {
         if (computerSelection === `scissors`) {
             computerScore++;
             matchResult.textContent = 'You Lose! Scissors beat Paper!';
+            scorePlayer.textContent = 'Player Score: ' + playerScore;
+            scoreCPU.textContent = 'CPU Score: ' + computerScore;
         } else {
             playerScore++;
             matchResult.textContent = 'You Win! Paper beats Rock!';
+            scorePlayer.textContent = 'Player Score: ' + playerScore;
+            scoreCPU.textContent = 'CPU Score: ' + computerScore;
         }
     } else if (playerSelection === `scissors`) {
         if (computerSelection === `rock`) {
             computerScore++;
             matchResult.textContent = 'You Lose! Rock beats Scissors!';
+            scorePlayer.textContent = 'Player Score: ' + playerScore;
+            scoreCPU.textContent = 'CPU Score: ' + computerScore;
         } else {
             playerScore++;
             matchResult.textContent = 'You Win! Scissors beat Paper!';
+            scorePlayer.textContent = 'Player Score: ' + playerScore;
+            scoreCPU.textContent = 'CPU Score: ' + computerScore;
+        }
+    }
+
+    if (playerScore === 5 || computerScore === 5) {
+        if (playerScore > computerScore) {
+            gameResult.textContent = 'Congratulations! You Won!';
+        } else {
+            gameResult.textContent = 'Too bad! You Lost!';
         }
     }
 }
-
-// function game() {
-//     // Repeat 5 times
-//     for (let i = 0; i < 5; i++ ) {
-//         console.log(playRound(getPlayerChoice(), getComputerChoice()));
-//     }
-//     if (playerScore > computerScore) {
-//         console.log('Congratulations! You Won!');
-//     } else {
-//         console.log('Too bad! You Lost!');
-//     }
-// }
 
 const playerSelection = 'rock';
 const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
-
-// playRound();
-
-//game();
