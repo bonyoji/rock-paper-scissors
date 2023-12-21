@@ -12,11 +12,15 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    // Get player choice
-    let userChoice = prompt(`'Rock, Paper, or Scissors' ?`).toLowerCase();
-    return userChoice;
-}
+// function getPlayerChoice() {
+//     // Get player choice
+//     let userChoice = prompt(`'Rock, Paper, or Scissors' ?`).toLowerCase();
+//     return userChoice;
+// }
+
+let btn = document.querySelectorAll('.button');
+
+
 
 function playRound(playerSelection, computerSelection) {
     // Game is a tie, play again
@@ -53,21 +57,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    // Repeat 5 times
-    for (let i = 0; i < 5; i++ ) {
-        console.log(playRound(getPlayerChoice(), getComputerChoice()));
-    }
-    if (playerScore > computerScore) {
-        console.log('Congratulations! You Won!');
-    } else {
-        console.log('Too bad! You Lost!');
-    }
-}
+// function game() {
+//     // Repeat 5 times
+//     for (let i = 0; i < 5; i++ ) {
+//         console.log(playRound(getPlayerChoice(), getComputerChoice()));
+//     }
+//     if (playerScore > computerScore) {
+//         console.log('Congratulations! You Won!');
+//     } else {
+//         console.log('Too bad! You Lost!');
+//     }
+// }
 
 const playerSelection = 'rock';
 const computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
-game();
+playRound();
+
+//game();
