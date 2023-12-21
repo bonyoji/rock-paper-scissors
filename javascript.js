@@ -73,11 +73,19 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+    if (playerScore !== 5 || computerScore !== 5) {
+        gameResult.textContent = 'Game in Play!';
+    }
+
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore > computerScore) {
             gameResult.textContent = 'Congratulations! You Won!';
+            playerScore = 0;
+            computerScore = 0;
         } else {
             gameResult.textContent = 'Too bad! You Lost!';
+            playerScore = 0;
+            computerScore = 0;
         }
     }
 }
